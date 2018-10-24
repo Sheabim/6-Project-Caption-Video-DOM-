@@ -1,5 +1,5 @@
 
-// https://www.linkedin.com/learning/creating-web-media/trigger-content-from-a-video
+//https://www.linkedin.com/learning/creating-web-media/trigger-content-from-a-video
 
 const videos = document.getElementsByTagName('video')[0];
 const spans = document.getElementsByTagName('span');
@@ -10,12 +10,12 @@ const spans = document.getElementsByTagName('span');
 
 videos.ontimeupdate = () => {
 
-	 //Inside the event listener, loop over each span element.
-   //loop then span element
+//Inside the event listener, loop over each span element.
+//loop then span element
   for (let i = 0; i <= spans.length; i ++) {
-    //Inside the loop, use a conditional to see if the video’s current time is
+//Inside the loop, use a conditional to see if the video’s current time is
     const datas = videos.currentTime;
-    // If the conditions are met, set the span’s color property to the highlighted
+// If the conditions are met, set the span’s color property to the highlighted
 // color of your choice, and if not, set the span’s color back to its initial color.
     if (datas > spans[i].getAttribute("data-start")
     && datas < spans[i].getAttribute("data-end")) {
@@ -29,11 +29,8 @@ videos.ontimeupdate = () => {
   }
 };
 
-
 // walk around the video
-
 const spanProperty = document.querySelectorAll("p span");
-
 for(let i = 0; i < spanProperty.length; i += 1) {
   spanProperty[i].addEventListener("click", function(event) {
     videos.currentTime = event.target.getAttribute("data-start");
